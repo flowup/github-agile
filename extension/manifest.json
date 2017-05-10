@@ -1,0 +1,32 @@
+{
+	"name": "Github Agile",
+	"version": "0.0.1",
+	"description": "Adds useful agile features to the github boards",
+	"homepage_url": "https://github.com/flowup/github-agile",
+	"manifest_version": 2,
+	"minimum_chrome_version": "49",
+	"permissions": [
+		"https://github.com/*",
+		"https://gist.github.com/*",
+		"storage"
+	],
+	"icons": {
+	},
+	"content_scripts": [
+		{
+			"run_at": "document_start",
+			"matches": [
+				"https://github.com/*",
+				"https://gist.github.com/*"
+			],
+			"css": [
+			],
+			"js": [
+				"vendor/gh-injection.js",
+				"vendor/page-detect.js",
+                "board.js",
+                "content.js"
+			]
+		}
+	]
+}
